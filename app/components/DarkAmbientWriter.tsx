@@ -38,9 +38,13 @@ const DarkAmbientWriter = () => {
         .map(([index, { char, timestamp }]) => {
           const timePassed = now - timestamp;
           const opacity = Math.max(0, 1 - timePassed / 10000);
-          return `<span style="opacity: ${opacity}">${
-            char === " " ? "&nbsp;" : char
-          }</span>`;
+          const displayChar =
+            char === "\n"
+              ? '<span style="display:block; height:1em;"> </span>'
+              : char === " "
+              ? "&nbsp;"
+              : char;
+          return `<span style="opacity: ${opacity}; transition: opacity 0.5s ease;">${displayChar}</span>`;
         })
         .join("");
     }
@@ -67,8 +71,11 @@ const DarkAmbientWriter = () => {
   };
 
   useEffect(() => {
-    const intervalId = setInterval(updateOverlay, 100);
-    return () => clearInterval(intervalId);
+    const update = () => {
+      updateOverlay();
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
   }, [updateOverlay]);
 
   useEffect(() => {
@@ -109,6 +116,8 @@ const DarkAmbientWriter = () => {
           <div
             ref={overlayRef}
             className="absolute inset-0 p-4 pointer-events-none text-white whitespace-pre-wrap break-words text-left overflow-y-auto"
+            aria-live="polite"
+            aria-relevant="additions text"
           ></div>
         </div>
       </div>
