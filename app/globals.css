@@ -20,9 +20,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
 
-  .fade-out {
-    opacity: 0;
-    transition: opacity 10s ease-out;
-  }
+.fade-out {
+  display: inline-block;
+  opacity: 1;
+  animation: fadeOut 10s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
