@@ -26,7 +26,7 @@ const AboutPage: React.FC = () => {
           </li>
         </ul>
       </nav>
-      <div className="w-full max-w-2xl mx-auto text-center mt-10 px-4 sm:px-0">
+      <div className="w-full max-w-2xl mx-auto text-center mt-12 px-4 sm:px-0">
         <div className="text-left sm:p-6 md:p-8 lg:p-10 xl:p-12">
           <p className="mb-4">
             This app is a minimalist writing tool inspired by the author&apos;s
