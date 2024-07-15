@@ -24,8 +24,8 @@ const AboutPage: React.FC = () => {
         </div>
         <div className="text-left p-4">
           <p className="mb-4">
-            Dark Ambient Writer is a minimalist writing application designed to
-            provide a unique and immersive writing experience, inspired by the
+            This demo is a minimalist writing application designed to provide a
+            unique and immersive writing experience, inspired by the
             author&apos;s personal coping mechanism for sadness.
           </p>
           <p className="mb-4">
