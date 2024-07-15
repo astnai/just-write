@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
+import Link from "next/link";
 
 const DarkAmbientWriter = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -33,20 +34,21 @@ const DarkAmbientWriter = () => {
   const updateOverlay = useCallback(() => {
     if (overlayRef.current) {
       const now = Date.now();
-      overlayRef.current.innerHTML = Object.entries(charsRef.current)
+      const content = Object.entries(charsRef.current)
         .sort(([a], [b]) => Number(a) - Number(b))
-        .map(([index, { char, timestamp }]) => {
+        .map(([, { char, timestamp }]) => {
           const timePassed = now - timestamp;
           const opacity = Math.max(0, 1 - timePassed / 10000);
-          const displayChar =
-            char === "\n"
-              ? '<span style="display:block; height:1em;"> </span>'
-              : char === " "
-              ? "&nbsp;"
-              : char;
-          return `<span style="opacity: ${opacity}; transition: opacity 0.5s ease;">${displayChar}</span>`;
+          if (char === "\n") {
+            return "\n";
+          } else if (char === " ") {
+            return " ";
+          }
+          return `<span style="opacity: ${opacity}; transition: opacity 0.5s ease;">${char}</span>`;
         })
         .join("");
+
+      overlayRef.current.innerHTML = content.replace(/\n/g, "<br>");
     }
   }, []);
 
@@ -85,20 +87,36 @@ const DarkAmbientWriter = () => {
   }, [isPlaying]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-4">
-      <div className="w-full max-w-2xl mx-auto text-center">
+    <div className="flex flex-col items-center justify-start min-h-screen bg-black text-gray-300 p-4">
+      <nav className="w-full max-w-2xl mx-auto mb-8 fixed top-0 left-0 right-0 bg-black z-10 p-4">
+        <ul className="flex justify-center space-x-4">
+          <li>
+            <Link href="/" className="hover:text-white transition-colors">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className="hover:text-white transition-colors">
+              About
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="w-full max-w-2xl mx-auto text-center mt-16">
         <div className="flex items-center justify-center mb-4 space-x-2">
-          <h1 className="text-2xl font-bold">do you feel bad? just write</h1>
+          <h1 className="text-2xl font-bold text-white">
+            do you feel bad? just write
+          </h1>
           <button
             onClick={handlePlayPause}
-            className="text-white hover:text-gray-300 transition-colors duration-200 focus:outline-none"
+            className="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none rounded-full p-2"
             aria-label={isPlaying ? "pause" : "play"}
           >
             {isPlaying ? <FaPause size={18} /> : <FaPlay size={18} />}
           </button>
         </div>
         <div
-          className={`relative w-full h-[calc(100vh-120px)] rounded-2xl border transition-colors duration-500 ${
+          className={`relative w-full h-[calc(100vh-200px)] rounded-lg border transition-colors duration-500 ${
             isPlaying ? "border-white" : "border-neutral-500"
           }`}
         >
@@ -110,12 +128,12 @@ const DarkAmbientWriter = () => {
               isPlaying ? "start writing..." : "play to start writing..."
             }
             disabled={!isPlaying}
-            className="w-full h-full p-4 bg-transparent text-transparent resize-none focus:outline-none placeholder-gray-500 rounded-2xl caret-white overflow-y-auto"
+            className="w-full h-full p-4 bg-transparent text-transparent resize-none focus:outline-none placeholder-gray-600 rounded-lg caret-white overflow-y-auto text-left"
             style={{ caretColor: "white" }}
           />
           <div
             ref={overlayRef}
-            className="absolute inset-0 p-4 pointer-events-none text-white whitespace-pre-wrap break-words text-left overflow-y-auto"
+            className="absolute inset-0 p-4 pointer-events-none text-gray-300 overflow-y-auto text-left whitespace-pre-wrap break-words"
             aria-live="polite"
             aria-relevant="additions text"
           ></div>
