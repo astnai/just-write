@@ -6,7 +6,7 @@ import Link from "next/link";
 const AboutPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-black text-white">
-      <nav className="w-full max-w-2xl mx-auto mb-10 fixed top-0 left-0 right-0 bg-black z-10 p-4">
+      <nav className="w-full max-w-2xl mx-auto mb-10 fixed top-0 left-0 right-0 bg-black z-10 p-6">
         <ul className="flex justify-center space-x-4">
           <li>
             <Link
