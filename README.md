@@ -1,6 +1,6 @@
-# Dark Ambient Writer
+# Do you feel bad? just write
 
-Dark Ambient Writer is a minimalist writing application designed to provide a unique and immersive writing experience. Inspired by the author's personal coping mechanism for sadness, this app allows users to express their thoughts and emotions freely while listening to dark ambient music.
+Writing demo designed to provide a unique and immersive writing experience. Inspired by the author's personal coping mechanism for sadness, this app allows users to express their thoughts and emotions freely while listening to dark ambient music.
 
 ## Features
 

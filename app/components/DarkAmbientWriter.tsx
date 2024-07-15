@@ -105,7 +105,7 @@ const DarkAmbientWriter = () => {
       <div className="w-full max-w-2xl mx-auto text-center mt-16">
         <div className="flex items-center justify-center mb-4 space-x-2">
           <h1 className="text-2xl font-bold text-white">
-            do you feel bad? just write
+            Do you feel bad? just write
           </h1>
           <button
             onClick={handlePlayPause}
@@ -125,7 +125,7 @@ const DarkAmbientWriter = () => {
             value={text}
             onChange={handleTextChange}
             placeholder={
-              isPlaying ? "start writing..." : "play to start writing..."
+              isPlaying ? "Start writing..." : "Play to start writing..."
             }
             disabled={!isPlaying}
             className="w-full h-full p-4 bg-transparent text-transparent resize-none focus:outline-none placeholder-gray-600 rounded-lg caret-white overflow-y-auto text-left"

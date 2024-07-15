@@ -52,14 +52,14 @@ const AboutPage: React.FC = () => {
           <p className="mb-4">
             This demo was developed by{" "}
             <Link
-              href="https://your-website-link-here.com"
+              href="https://agustinarias.com"
               className="text-white underline hover:text-gray-300"
             >
               Agustín Arias
             </Link>
             . You can find the source code on{" "}
             <Link
-              href="https://your-repo-link-here.com"
+              href="https://github.com/astnai/just-write"
               className="text-white underline hover:text-gray-300"
             >
               GitHub
