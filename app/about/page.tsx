@@ -20,7 +20,7 @@ const AboutPage: React.FC = () => {
       </nav>
       <div className="w-full max-w-2xl mx-auto text-center mt-14">
         <div className="flex items-center justify-center space-x-2">
-          <h1 className="text-2xl font-bold text-white">About</h1>
+          <h1 className="text-2xl mb-2 font-bold text-white">About</h1>
         </div>
         <div className="text-left sm:p-6 md:p-8 lg:p-10 xl:p-12">
           <p className="mb-4">
