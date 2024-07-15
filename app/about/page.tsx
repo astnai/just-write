@@ -4,7 +4,7 @@ import Link from "next/link";
 const AboutPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-black text-gray-300 p-6">
-      <nav className="w-full max-w-2xl mx-auto mb-10 fixed top-0 left-0 right-0 bg-black z-10 p-4">
+      <nav className="w-full max-w-3xl mx-auto mb-10 fixed top-0 left-0 right-0 bg-black z-10 p-4">
         <ul className="flex justify-center space-x-4">
           <li>
             <Link href="/" className="hover:text-white transition-colors">
@@ -18,11 +18,9 @@ const AboutPage: React.FC = () => {
           </li>
         </ul>
       </nav>
-      <div className="w-full max-w-2xl mx-auto text-center mt-16">
+      <div className="w-full max-w-3xl mx-auto text-center mt-16">
         <div className="flex items-center justify-center mb-4 space-x-2">
-          <h1 className="text-2xl font-bold text-white">
-            About Dark Ambient Writer
-          </h1>
+          <h1 className="text-2xl font-bold text-white">About</h1>
         </div>
         <div className="text-left p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
           <p className="mb-4">
