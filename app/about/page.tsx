@@ -22,7 +22,7 @@ const AboutPage: React.FC = () => {
         <div className="flex items-center justify-center mb-4 space-x-2">
           <h1 className="text-2xl font-bold text-white">About</h1>
         </div>
-        <div className="text-left p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+        <div className="text-left p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl">
           <p className="mb-4">
             This demo is a minimalist writing application designed to provide a
             unique and immersive writing experience, inspired by the
