@@ -87,16 +87,19 @@ const DarkAmbientWriter = () => {
   }, [isPlaying]);
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-black text-gray-300 p-4">
-      <nav className="w-full max-w-2xl mx-auto mb-8 fixed top-0 left-0 right-0 bg-black z-10 p-4">
+    <div className="flex flex-col items-center justify-start min-h-screen bg-black text-white p-4">
+      <nav className="w-full max-w-2xl mx-auto mb-8 fixed top-0 left-0 right-0 bg-black z-10 p-6">
         <ul className="flex justify-center space-x-4">
           <li>
-            <Link href="/" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-neutral-500 transition-colors">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-white transition-colors">
+            <Link
+              href="/about"
+              className="hover:text-neutral-500 transition-colors"
+            >
               About
             </Link>
           </li>

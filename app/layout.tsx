@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <title>Dark Ambient Writer</title>
+        <title>Just writing</title>
         <meta
           name="description"
           content="A minimalist writing app with dark ambient aesthetics"
